@@ -11,34 +11,41 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+class Ui_interface_main(object):
+    def setupUi(self, interface_main):
+        interface_main.setObjectName("interface_main")
+        interface_main.resize(777, 595)
+        interface_main.setStyleSheet("QWidget#centralwidget{border-image: url(:/image/image/fon.jpg);}\n"
+"\n"
+"")
+        self.centralwidget = QtWidgets.QWidget(interface_main)
         self.centralwidget.setObjectName("centralwidget")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        interface_main.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(interface_main)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 777, 21))
+        self.menubar.setStyleSheet("background-color: rgb(90, 131, 151);")
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        interface_main.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(interface_main)
+        self.statusbar.setStyleSheet("background-color: rgb(90, 131, 151);")
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        interface_main.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(interface_main)
+        QtCore.QMetaObject.connectSlotsByName(interface_main)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, interface_main):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        interface_main.setWindowTitle(_translate("interface_main", "MainWindow"))
+import icon_resource_rc
+import image_resource_rc
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    interface_main = QtWidgets.QMainWindow()
+    ui = Ui_interface_main()
+    ui.setupUi(interface_main)
+    interface_main.show()
     sys.exit(app.exec_())
