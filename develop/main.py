@@ -9,7 +9,7 @@ from pattern_menu import InterfacePatternMenu
 from image_menu import InterfaceImageMenu
 
 
-class InterfaceMain(QMainWindow, Ui_interface_main):
+class InterfaceMain(QMainWindow, QApplication, Ui_interface_main):
     def __init__(self, parent=None):
         super().__init__(parent)
         QMainWindow.__init__(self)
@@ -21,7 +21,7 @@ class InterfaceMain(QMainWindow, Ui_interface_main):
         self.button_open_image_menu.clicked.connect(self.open_image_menu)
 
         """Attributes of classes"""
-        self.interface_camera_menu = InterfaceCameraMenu()
+        self.interface_camera_menu = InterfaceCameraMenu(camera=True)
         self.interface_pattern_menu = InterfacePatternMenu()
         self.interface_image_menu = InterfaceImageMenu()
 
