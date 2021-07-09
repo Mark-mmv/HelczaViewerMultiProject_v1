@@ -1,6 +1,8 @@
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.integrate import quad
+import numexpr
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QDialog, QShortcut
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -18,6 +20,8 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
         self.button_import_pattern.clicked.connect(self.import_pattern)
         self.button_save_pattern.clicked.connect(self.save_pattern)
         self.button_create_pattern.clicked.connect(self.create_pattern)
+        self.button_approximate.clicked.connect(self.approximate)
+        self.button_rotation.clicked.connect(self.rotation_pattern)
 
         """Attributes"""
         self.pattern = np.array([])
@@ -105,12 +109,65 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
         self.pattern[1] /= self.pattern[1].max()
         self.print_pattern()
 
+    def approximate(self):
+        pattern_x = []
+        pattern_y = []
+        function_y = self.textedit_formule_y.toPlainText()
+        function_x = self.textedit_formule_x.toPlainText()
+        x0 = (self.pattern[0][0] + self.pattern[0][-1]) / 2
+        y0 = (self.pattern[1][0] + self.pattern[1][-1]) / 2
+        print(x0, y0)
+
+        for pattern_spot_x in self.pattern[0]:
+            pattern_x.append(quad(lambda x: numexpr.evaluate(function_x), x0, pattern_spot_x)[0])
+
+        for pattern_spot_y in self.pattern[1]:
+            pattern_y.append(quad(lambda x: numexpr.evaluate(function_y), y0, pattern_spot_y)[0])
+
+        self.pattern = np.array([pattern_x, pattern_y])
+        self.pattern[0] -= (self.pattern[0].max() + self.pattern[0].min())/2
+        self.pattern[1] -= (self.pattern[1].max() + self.pattern[1].min())/2
+        self.pattern[0] /= self.pattern[0].max()
+        self.pattern[1] /= self.pattern[1].max()
+        self.print_pattern()
+
+    def rotation_pattern(self):
+        beta = float(self.textedit_beta.toPlainText()) * np.pi / 180
+        alpha = float(self.textedit_alpha.toPlainText()) * np.pi / 180
+        horizontal = float(self.textedit_horizontal.toPlainText())
+        horizontal_shift = float(self.textedit_horizontalshift.toPlainText())
+        vertical = float(self.textedit_vertical.toPlainText())
+        vertical_shift = float(self.textedit_verticalshift.toPlainText())
+        h0 = float(self.textedit_h0.toPlainText())
+        d0 = float(self.textedit_d0.toPlainText())
+        d1 = float(self.textedit_d1.toPlainText())
+
+        self.pattern[0] *= horizontal / 2
+        self.pattern[0] += horizontal_shift
+        self.pattern[1] *= vertical / 2
+        self.pattern[1] += vertical_shift
+
+        self.pattern[0] = d0 * (self.pattern[0] + d1 * np.tan(beta))*np.cos(beta) /\
+                          (d0 + (self.pattern[0] + d1 * np.tan(beta)) * np.sin(beta))
+        self.pattern[1] = d0 * self.pattern[1] / (d0 + (self.pattern[0] + d1 * np.tan(beta)) * np.sin(beta))
+
+        self.pattern[0] = d0 * (self.pattern[0] / (d0 - d1 / np.cos(alpha) - (h0 + self.pattern[1] - d1 * np.tan(alpha)) * np.sin(alpha) + d1))
+        self.pattern[1] = d0 * (((h0 + self.pattern[1] - d1 * np.tan(alpha)) * np.cos(alpha) - h0) / (d0 - d1 / np.cos(alpha) - (h0 + self.pattern[1] - d1 * np.tan(alpha)) * np.sin(alpha) + d1))
+
+        self.pattern[0] -= (self.pattern[0].max() + self.pattern[0].min())/2
+        self.pattern[1] -= (self.pattern[1].max() + self.pattern[1].min())/2
+        self.pattern[0] /= np.abs(self.pattern[0]).max()
+        self.pattern[1] /= np.abs(self.pattern[1]).max()
+        self.print_pattern()
+
+
     def print_pattern(self):
         self.axes_pattern.clear()
         self.axes_pattern.plot([1, 1], [-1, 1], [-1, -1], [-1, 1], [-1, 1], [1, 1], [-1, 1], [-1, -1], color='k')
         self.axes_pattern.plot(self.pattern[0], self.pattern[1])
         self.axes_pattern.plot(self.pattern[0], self.pattern[1], '.')
         self.canvas_pattern.draw()
+
 
 
 def main():
