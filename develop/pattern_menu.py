@@ -35,19 +35,20 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
 
     def import_pattern(self):
         try:
-            pattern_shots = []
-            data = []
             files = QtWidgets.QFileDialog.getOpenFileNames(self, 'Select pattern', '', "Text files (*.txt)")
 
-            for f in files[0]:
-                file = open(f, 'r')
-                data += file.readlines()
-                file.close()
-            for line in data:
-                pattern_shots.append([float(line.split()[0]), float(line.split()[1])])
+            if files[0] != list():
+                pattern_shots = []
+                data = []
+                for f in files[0]:
+                    file = open(f, 'r')
+                    data += file.readlines()
+                    file.close()
+                for line in data:
+                    pattern_shots.append([float(line.split()[0]), float(line.split()[1])])
 
-            self.pattern = np.array(pattern_shots).transpose()
-            self.print_pattern()
+                self.pattern = np.array(pattern_shots).transpose()
+                self.print_pattern()
         except:
             print('Import error')
 
@@ -116,7 +117,6 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
         function_x = self.textedit_formule_x.toPlainText()
         x0 = (self.pattern[0][0] + self.pattern[0][-1]) / 2
         y0 = (self.pattern[1][0] + self.pattern[1][-1]) / 2
-        print(x0, y0)
 
         for pattern_spot_x in self.pattern[0]:
             pattern_x.append(quad(lambda x: numexpr.evaluate(function_x), x0, pattern_spot_x)[0])
