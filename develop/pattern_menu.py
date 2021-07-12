@@ -4,7 +4,7 @@ import numpy as np
 from scipy.integrate import quad
 import numexpr
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QDialog, QShortcut
+from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QDialog, QShortcut, QLabel
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5 import NavigationToolbar2QT as NavigationToolbar
 
@@ -76,8 +76,8 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
     def create_pattern(self):
         pattern_trace = [[0, 0]]
         pattern_shots = []
-        step_x = 1. / float(self.textedit_rozx.toPlainText())
-        step_y = 1. / float(self.textedit_rozy.toPlainText())
+        step_x = 1. / (float(self.textedit_rozx.toPlainText()) + 1)
+        step_y = 1. / (float(self.textedit_rozy.toPlainText()) + 1)
         position_current_x, position_current_y = (0., 0.)
         circle = False
 
@@ -105,8 +105,8 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
                 circle = True
 
         self.pattern = np.array(pattern_shots).transpose()
-        self.pattern[0] /= self.pattern[0].max()
-        self.pattern[1] /= self.pattern[1].max()
+
+        self.normalization_pattern()
         self.print_pattern()
 
     def approximate(self):
@@ -125,10 +125,7 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
             pattern_y.append(quad(lambda x: numexpr.evaluate(function_y), y0, pattern_spot_y)[0])
 
         self.pattern = np.array([pattern_x, pattern_y])
-        self.pattern[0] -= (self.pattern[0].max() + self.pattern[0].min())/2
-        self.pattern[1] -= (self.pattern[1].max() + self.pattern[1].min())/2
-        self.pattern[0] /= self.pattern[0].max()
-        self.pattern[1] /= self.pattern[1].max()
+        self.normalization_pattern()
         self.print_pattern()
 
     def rotation_pattern(self):
@@ -151,15 +148,20 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
                           (d0 + (self.pattern[0] + d1 * np.tan(beta)) * np.sin(beta))
         self.pattern[1] = d0 * self.pattern[1] / (d0 + (self.pattern[0] + d1 * np.tan(beta)) * np.sin(beta))
 
-        self.pattern[0] = d0 * (self.pattern[0] / (d0 - d1 / np.cos(alpha) - (h0 + self.pattern[1] - d1 * np.tan(alpha)) * np.sin(alpha) + d1))
-        self.pattern[1] = d0 * (((h0 + self.pattern[1] - d1 * np.tan(alpha)) * np.cos(alpha) - h0) / (d0 - d1 / np.cos(alpha) - (h0 + self.pattern[1] - d1 * np.tan(alpha)) * np.sin(alpha) + d1))
+        self.pattern[0] = d0 * (self.pattern[0] / (d0 - d1 / np.cos(alpha) - (h0 + self.pattern[1] - d1 * np.tan(alpha))
+                                                   * np.sin(alpha) + d1))
+        self.pattern[1] = d0 * (((h0 + self.pattern[1] - d1 * np.tan(alpha)) * np.cos(alpha) - h0) /
+                                (d0 - d1 / np.cos(alpha) - (h0 + self.pattern[1] - d1 * np.tan(alpha))
+                                 * np.sin(alpha) + d1))
 
-        self.pattern[0] -= (self.pattern[0].max() + self.pattern[0].min())/2
-        self.pattern[1] -= (self.pattern[1].max() + self.pattern[1].min())/2
-        self.pattern[0] /= np.abs(self.pattern[0]).max()
-        self.pattern[1] /= np.abs(self.pattern[1]).max()
+        self.normalization_pattern()
         self.print_pattern()
 
+    def normalization_pattern(self):
+        self.pattern[0] -= (self.pattern[0].max() + self.pattern[0].min()) / 2
+        self.pattern[1] -= (self.pattern[1].max() + self.pattern[1].min()) / 2
+        self.pattern[0] /= np.abs(self.pattern[0]).max()
+        self.pattern[1] /= np.abs(self.pattern[1]).max()
 
     def print_pattern(self):
         self.axes_pattern.clear()
@@ -167,7 +169,6 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
         self.axes_pattern.plot(self.pattern[0], self.pattern[1])
         self.axes_pattern.plot(self.pattern[0], self.pattern[1], '.')
         self.canvas_pattern.draw()
-
 
 
 def main():

@@ -48,6 +48,9 @@
            <bold>false</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string>Úhel natočení vzorku (rotace)</string>
+         </property>
          <property name="text">
           <string>Beta</string>
          </property>
@@ -117,6 +120,21 @@ p, li { white-space: pre-wrap; }
            <bold>false</bold>
           </font>
          </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string>Úhel naklopení vzorku</string>
+         </property>
+         <property name="whatsThis">
+          <string comment="Alpha" extracomment="Alpha">Alpha</string>
+         </property>
+         <property name="accessibleName">
+          <string>Alpha</string>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>Alpha</string>
          </property>
@@ -135,6 +153,9 @@ p, li { white-space: pre-wrap; }
            <width>75</width>
            <height>25</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Vzdálenost v mm osy otáčení náklopu od osy elektronového děla</string>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -164,6 +185,9 @@ p, li { white-space: pre-wrap; }
            <bold>false</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string>Horizontální posun středu obdélníkového okna vzhledem k ose elektronového děla v mm</string>
+         </property>
          <property name="text">
           <string>Horizontalshift</string>
          </property>
@@ -182,6 +206,9 @@ p, li { white-space: pre-wrap; }
            <width>75</width>
            <height>25</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Vzdálenost v mm osy otáčení a nosy náklopu od kolmého povrchu vzorku</string>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -206,6 +233,9 @@ p, li { white-space: pre-wrap; }
            <height>25</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Horizontální rozměr obdélníkového okna v mm</string>
+         </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -229,6 +259,9 @@ p, li { white-space: pre-wrap; }
            <height>25</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Vertikální rozměr obdélníkového okna v mm</string>
+         </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -251,6 +284,9 @@ p, li { white-space: pre-wrap; }
            <width>75</width>
            <height>25</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Vertikální posun středu obdélníkového okna vzhledem k ose elektronového děla v mm</string>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -284,6 +320,9 @@ p, li { white-space: pre-wrap; }
            <bold>false</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string>Vzdálenost v mm osy otáčení a nosy náklopu od kolmého povrchu vzorku</string>
+         </property>
          <property name="text">
           <string>d1</string>
          </property>
@@ -297,6 +336,9 @@ p, li { white-space: pre-wrap; }
            <weight>50</weight>
            <bold>false</bold>
           </font>
+         </property>
+         <property name="toolTip">
+          <string>Vzdálenost v mm apertury nelektronového děla od kolmého povrchu vzorku</string>
          </property>
          <property name="text">
           <string>d0</string>
@@ -318,6 +360,9 @@ p, li { white-space: pre-wrap; }
            <bold>false</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string>Počet bodů od 0 do 1 ve y-ém směru</string>
+         </property>
          <property name="text">
           <string>RozY</string>
          </property>
@@ -336,6 +381,30 @@ p, li { white-space: pre-wrap; }
            <width>75</width>
            <height>25</height>
           </size>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string comment="Alpha" extracomment="Alpha">Úhel naklopení vzorku</string>
+         </property>
+         <property name="statusTip">
+          <string/>
+         </property>
+         <property name="whatsThis">
+          <string/>
+         </property>
+         <property name="accessibleName">
+          <string/>
+         </property>
+         <property name="accessibleDescription">
+          <string/>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -372,6 +441,9 @@ p, li { white-space: pre-wrap; }
            <bold>false</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string>Vertikální posun středu obdélníkového okna vzhledem k ose elektronového děla v mm</string>
+         </property>
          <property name="text">
           <string>Verticalshift</string>
          </property>
@@ -404,6 +476,9 @@ p, li { white-space: pre-wrap; }
            <height>25</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Horizontální posun středu obdélníkového okna vzhledem k ose elektronového děla v mm</string>
+         </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -427,6 +502,9 @@ p, li { white-space: pre-wrap; }
            <height>30</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Počet bodů od 0 do 1 ve y-ém směru</string>
+         </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -449,6 +527,9 @@ p, li { white-space: pre-wrap; }
            <width>75</width>
            <height>25</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Úhel natočení vzorku (rotace)</string>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -492,6 +573,9 @@ p, li { white-space: pre-wrap; }
            <bold>false</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string>Vzdálenost v mm osy otáčení náklopu od osy elektronového děla</string>
+         </property>
          <property name="text">
           <string>h0</string>
          </property>
@@ -511,6 +595,9 @@ p, li { white-space: pre-wrap; }
            <height>30</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Počet bodů od 0 do 1 ve x-ém směru</string>
+         </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -529,6 +616,9 @@ p, li { white-space: pre-wrap; }
            <bold>false</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string>Horizontální rozměr obdélníkového okna v mm</string>
+         </property>
          <property name="text">
           <string>Horizontal</string>
          </property>
@@ -542,6 +632,9 @@ p, li { white-space: pre-wrap; }
            <weight>50</weight>
            <bold>false</bold>
           </font>
+         </property>
+         <property name="toolTip">
+          <string>Počet bodů od 0 do 1 ve x-ém směru</string>
          </property>
          <property name="text">
           <string>RozX</string>
@@ -561,6 +654,9 @@ p, li { white-space: pre-wrap; }
            <width>75</width>
            <height>25</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Vzdálenost v mm apertury nelektronového děla od kolmého povrchu vzorku</string>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -601,6 +697,9 @@ p, li { white-space: pre-wrap; }
            <weight>50</weight>
            <bold>false</bold>
           </font>
+         </property>
+         <property name="toolTip">
+          <string>Vertikální rozměr obdélníkového okna v mm</string>
          </property>
          <property name="text">
           <string>Vertical</string>
