@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>674</width>
-    <height>720</height>
+    <width>822</width>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,16 +32,7 @@
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QWidget" name="widget_image_out" native="true">
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <layout class="QVBoxLayout" name="companovka_image_out"/>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="1" rowspan="2">
+       <item row="0" column="1">
         <widget class="QWidget" name="widget_controle" native="true">
          <property name="maximumSize">
           <size>
@@ -51,9 +42,30 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="button_open_analysis_window">
             <property name="text">
-             <string>some button</string>
+             <string>Open Analysis window</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkbox_line_profile">
+            <property name="text">
+             <string>Line profile</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkbox_select_area">
+            <property name="text">
+             <string>Select area</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="button_select_area">
+            <property name="text">
+             <string>Select area</string>
             </property>
            </widget>
           </item>
@@ -70,8 +82,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>674</width>
-     <height>21</height>
+     <width>822</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_file">

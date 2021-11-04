@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>870</width>
-    <height>663</height>
+    <width>998</width>
+    <height>715</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -158,7 +158,7 @@ p, li { white-space: pre-wrap; }
           <enum>QTabWidget::Rounded</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="tab_camera_setting">
           <property name="layoutDirection">
@@ -177,72 +177,6 @@ p, li { white-space: pre-wrap; }
            <property name="topMargin">
             <number>9</number>
            </property>
-           <item row="1" column="1">
-            <spacer name="verticalspacer_5">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="13" column="0" colspan="3">
-            <widget class="QLabel" name="label_exposure">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>20</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Exposure [ms]:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="16" column="0" colspan="3">
-            <widget class="QLabel" name="label_gain">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>20</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Gain:</string>
-             </property>
-            </widget>
-           </item>
            <item row="9" column="0" colspan="3">
             <spacer name="verticalspacer_6">
              <property name="orientation">
@@ -258,92 +192,6 @@ p, li { white-space: pre-wrap; }
               </size>
              </property>
             </spacer>
-           </item>
-           <item row="19" column="0" colspan="3">
-            <widget class="QLabel" name="label_fps">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>20</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Fps:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="12" column="0" colspan="3">
-            <widget class="QCheckBox" name="checkbox_gray_color">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>20</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Gray / Color</string>
-             </property>
-            </widget>
-           </item>
-           <item row="21" column="0" colspan="3">
-            <widget class="QDoubleSpinBox" name="spinbox_fps">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="singleStep">
-              <double>0.010000000000000</double>
-             </property>
-             <property name="value">
-              <double>2.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="18" column="0" colspan="3">
-            <widget class="QSpinBox" name="spinbox_gain">
-             <property name="minimumSize">
-              <size>
-               <width>100</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="minimum">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <number>33</number>
-             </property>
-            </widget>
-           </item>
-           <item row="11" column="0" colspan="3">
-            <widget class="QCheckBox" name="checkbox_grid_stream">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Grid</string>
-             </property>
-            </widget>
            </item>
            <item row="2" column="1">
             <widget class="QPushButton" name="button_start_stream">
@@ -413,7 +261,29 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="15" column="0" colspan="3">
+           <item row="18" column="0" colspan="3">
+            <widget class="QLabel" name="label_fps">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>15</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>Interupt [ms]:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0" colspan="3">
             <widget class="QDoubleSpinBox" name="spinbox_exposure">
              <property name="minimumSize">
               <size>
@@ -431,10 +301,93 @@ p, li { white-space: pre-wrap; }
               <double>60000.000000000000000</double>
              </property>
              <property name="singleStep">
-              <double>1.000000000000000</double>
+              <double>100.000000000000000</double>
              </property>
              <property name="value">
               <double>1000.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <spacer name="verticalspacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="11" column="0" colspan="3">
+            <widget class="QCheckBox" name="checkbox_gray_color">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>Gray / Color</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="0" colspan="3">
+            <widget class="QLabel" name="label_gain">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>15</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>Gain:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0" colspan="3">
+            <widget class="QCheckBox" name="checkbox_grid_stream">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>Grid</string>
+             </property>
+            </widget>
+           </item>
+           <item row="17" column="0" colspan="3">
+            <widget class="QSpinBox" name="spinbox_gain">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>33</number>
              </property>
             </widget>
            </item>
@@ -656,13 +609,53 @@ p, li { white-space: pre-wrap; }
              </layout>
             </widget>
            </item>
-           <item row="10" column="0" colspan="3">
-            <widget class="QCheckBox" name="checkbox_axis">
+           <item row="12" column="0" colspan="3">
+            <widget class="QLabel" name="label_exposure">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>15</height>
+              </size>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: rgb(255, 255, 255);</string>
              </property>
              <property name="text">
-              <string>Axis</string>
+              <string>Exposure [ms]:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="20" column="0" colspan="3">
+            <widget class="QDoubleSpinBox" name="spinbox_interupt">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="maximum">
+              <double>250.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>35.000000000000000</double>
              </property>
             </widget>
            </item>
@@ -695,7 +688,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="button_select_data_from_area">
+            <widget class="QPushButton" name="button_select_area">
              <property name="text">
               <string>Select data from area</string>
              </property>
@@ -749,8 +742,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>870</width>
-     <height>21</height>
+     <width>998</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>

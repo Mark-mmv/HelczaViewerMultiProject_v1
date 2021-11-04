@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dialog_select_camera</class>
+ <widget class="QDialog" name="dialog_select_camera">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>368</width>
+    <height>66</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Select camera</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(120, 149, 165);</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QCommandLinkButton" name="command_link_button_vimba">
+     <property name="text">
+      <string>Vimba</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCommandLinkButton" name="command_link_button_andor">
+     <property name="text">
+      <string>Andor</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resource/icon_resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

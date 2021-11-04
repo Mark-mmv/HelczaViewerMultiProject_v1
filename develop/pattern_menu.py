@@ -12,14 +12,16 @@ from interfaces.interface_pattern_menu import Ui_interface_pattern_menu
 
 
 class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
-    def __init__(self):
+    def __init__(self, parent=None):
         QMainWindow.__init__(self)
         self.setupUi(self)
+        self.main = parent
 
         """Buttons"""
         self.button_import_pattern.clicked.connect(self.import_pattern)
         self.button_save_pattern.clicked.connect(self.save_pattern)
         self.button_create_pattern.clicked.connect(self.create_pattern)
+        self.button_input_polynomial.clicked.connect(self.input_polynomial)
         self.button_approximate.clicked.connect(self.approximate)
         self.button_rotation.clicked.connect(self.rotation_pattern)
 
@@ -50,7 +52,7 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
                 self.pattern = np.array(pattern_shots).transpose()
                 self.print_pattern()
         except:
-            print('Import error')
+            return [print("!!!" + str(error)) for error in sys.exc_info()]
 
     def save_pattern(self):
         try:
@@ -77,8 +79,12 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
     def create_pattern(self):
         pattern_trace = [[0, 0]]
         pattern_shots = []
-        step_x = 1. / (float(self.textedit_rozx.toPlainText()) + 1)
-        step_y = 1. / (float(self.textedit_rozy.toPlainText()) + 1)
+        try:
+            step_x = 1. / (float(self.textedit_rozx.toPlainText()) + 1)
+            step_y = 1. / (float(self.textedit_rozy.toPlainText()) + 1)
+        except:
+            return [print(error) for error in sys.exc_info()]
+
         position_current_x, position_current_y = (0., 0.)
         circle = False
 
@@ -110,11 +116,20 @@ class InterfacePatternMenu(QMainWindow, Ui_interface_pattern_menu):
         self.normalization_pattern()
         self.print_pattern()
 
+    def input_polynomial(self):
+        self.textedit_formule_x.setText(str(self.main.polynomial[0]))
+        self.textedit_formule_y.setText(str(self.main.polynomial[1]))
+
     def approximate(self):
         pattern_x = []
         pattern_y = []
         function_y = self.textedit_formule_y.toPlainText()
         function_x = self.textedit_formule_x.toPlainText()
+        symbols = (('^', '**'), ('Y', 'x'), ('y', 'x'), ('X', 'x'), ('^', '**'), ('X', 'x'))
+        for s1, s2 in symbols:
+            function_y = function_y.replace(s1, s2).strip()
+            function_x = function_x.replace(s1, s2).strip()
+
         x0 = (self.pattern[0][0] + self.pattern[0][-1]) / 2
         y0 = (self.pattern[1][0] + self.pattern[1][-1]) / 2
 
