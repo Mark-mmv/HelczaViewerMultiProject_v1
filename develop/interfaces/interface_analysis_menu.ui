@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Analysis menu</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource/icon_resource.qrc">
+    <normaloff>:/icon/icon/icon2.bmp</normaloff>:/icon/icon/icon2.bmp</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -19,6 +23,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource/icon_resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

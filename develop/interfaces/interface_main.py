@@ -14,7 +14,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_interface_main(object):
     def setupUi(self, interface_main):
         interface_main.setObjectName("interface_main")
-        interface_main.resize(777, 595)
+        interface_main.resize(594, 390)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/icon/icon2.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        interface_main.setWindowIcon(icon)
         interface_main.setStyleSheet("QWidget#centralwidget{border-image: url(:/image/image/fon.jpg);}\n"
 "\n"
 "")
@@ -28,7 +31,8 @@ class Ui_interface_main(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.button_open_camera_menu.sizePolicy().hasHeightForWidth())
         self.button_open_camera_menu.setSizePolicy(sizePolicy)
-        self.button_open_camera_menu.setMaximumSize(QtCore.QSize(80, 80))
+        self.button_open_camera_menu.setMinimumSize(QtCore.QSize(100, 90))
+        self.button_open_camera_menu.setMaximumSize(QtCore.QSize(100, 90))
         self.button_open_camera_menu.setObjectName("button_open_camera_menu")
         self.horizontalLayout.addWidget(self.button_open_camera_menu)
         self.button_open_pattern_menu = QtWidgets.QPushButton(self.centralwidget)
@@ -37,7 +41,8 @@ class Ui_interface_main(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.button_open_pattern_menu.sizePolicy().hasHeightForWidth())
         self.button_open_pattern_menu.setSizePolicy(sizePolicy)
-        self.button_open_pattern_menu.setMaximumSize(QtCore.QSize(80, 80))
+        self.button_open_pattern_menu.setMinimumSize(QtCore.QSize(100, 90))
+        self.button_open_pattern_menu.setMaximumSize(QtCore.QSize(100, 90))
         self.button_open_pattern_menu.setObjectName("button_open_pattern_menu")
         self.horizontalLayout.addWidget(self.button_open_pattern_menu)
         self.button_open_image_menu = QtWidgets.QPushButton(self.centralwidget)
@@ -46,12 +51,13 @@ class Ui_interface_main(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.button_open_image_menu.sizePolicy().hasHeightForWidth())
         self.button_open_image_menu.setSizePolicy(sizePolicy)
-        self.button_open_image_menu.setMaximumSize(QtCore.QSize(80, 80))
+        self.button_open_image_menu.setMinimumSize(QtCore.QSize(100, 90))
+        self.button_open_image_menu.setMaximumSize(QtCore.QSize(100, 90))
         self.button_open_image_menu.setObjectName("button_open_image_menu")
         self.horizontalLayout.addWidget(self.button_open_image_menu)
         interface_main.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(interface_main)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 777, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 594, 21))
         self.menubar.setStyleSheet("background-color: rgb(90, 131, 151);")
         self.menubar.setObjectName("menubar")
         interface_main.setMenuBar(self.menubar)
@@ -65,7 +71,7 @@ class Ui_interface_main(object):
 
     def retranslateUi(self, interface_main):
         _translate = QtCore.QCoreApplication.translate
-        interface_main.setWindowTitle(_translate("interface_main", "MainWindow"))
+        interface_main.setWindowTitle(_translate("interface_main", "Helcza Viewer"))
         self.button_open_camera_menu.setText(_translate("interface_main", "Open camera"))
         self.button_open_pattern_menu.setText(_translate("interface_main", "Pattern"))
         self.button_open_image_menu.setText(_translate("interface_main", "Open image"))

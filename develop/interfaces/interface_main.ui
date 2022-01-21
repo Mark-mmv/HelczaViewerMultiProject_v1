@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>777</width>
-    <height>595</height>
+    <width>594</width>
+    <height>390</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Helcza Viewer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource/icon_resource.qrc">
+    <normaloff>:/icon/icon/icon2.bmp</normaloff>:/icon/icon/icon2.bmp</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#centralwidget{border-image: url(:/image/image/fon.jpg);}
@@ -28,10 +32,16 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>90</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
-        <width>80</width>
-        <height>80</height>
+        <width>100</width>
+        <height>90</height>
        </size>
       </property>
       <property name="text">
@@ -47,10 +57,16 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>90</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
-        <width>80</width>
-        <height>80</height>
+        <width>100</width>
+        <height>90</height>
        </size>
       </property>
       <property name="text">
@@ -66,10 +82,16 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>90</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
-        <width>80</width>
-        <height>80</height>
+        <width>100</width>
+        <height>90</height>
        </size>
       </property>
       <property name="text">
@@ -84,7 +106,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>777</width>
+     <width>594</width>
      <height>21</height>
     </rect>
    </property>

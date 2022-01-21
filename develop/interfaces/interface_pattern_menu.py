@@ -14,7 +14,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_interface_pattern_menu(object):
     def setupUi(self, interface_pattern_menu):
         interface_pattern_menu.setObjectName("interface_pattern_menu")
-        interface_pattern_menu.resize(1542, 1113)
+        interface_pattern_menu.resize(1245, 868)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/icon/icon2.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        interface_pattern_menu.setWindowIcon(icon)
         interface_pattern_menu.setStyleSheet("QWidget#centralwidget_pattern_menu{background-color: qlineargradient(spread:pad, x1:0, y2:1, x1:1, y1:0, stop:0 rgba(114, 140, 153, 255), stop:1 rgba(22, 59, 77, 255));}")
         self.centralwidget_pattern_menu = QtWidgets.QWidget(interface_pattern_menu)
         self.centralwidget_pattern_menu.setStyleSheet("")
@@ -337,7 +340,7 @@ class Ui_interface_pattern_menu(object):
         self.verticalLayout.addWidget(self.widget_work)
         interface_pattern_menu.setCentralWidget(self.centralwidget_pattern_menu)
         self.menubar = QtWidgets.QMenuBar(interface_pattern_menu)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1542, 38))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1245, 21))
         self.menubar.setObjectName("menubar")
         interface_pattern_menu.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(interface_pattern_menu)
@@ -349,19 +352,19 @@ class Ui_interface_pattern_menu(object):
 
     def retranslateUi(self, interface_pattern_menu):
         _translate = QtCore.QCoreApplication.translate
-        interface_pattern_menu.setWindowTitle(_translate("interface_pattern_menu", "MainWindow"))
+        interface_pattern_menu.setWindowTitle(_translate("interface_pattern_menu", "Pattern menu"))
         self.textedit_alpha.setToolTip(_translate("interface_pattern_menu", "Úhel naklopení vzorku", "Alpha"))
         self.textedit_alpha.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-5</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">-5</span></p></body></html>"))
         self.textedit_rozx.setToolTip(_translate("interface_pattern_menu", "Počet bodů od 0 do 1 ve x-ém směru"))
         self.textedit_rozx.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">9</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">9</span></p></body></html>"))
         self.label_vertical.setToolTip(_translate("interface_pattern_menu", "Vertikální rozměr obdélníkového okna v mm"))
         self.label_vertical.setText(_translate("interface_pattern_menu", "Vertical"))
         self.label_alpha.setToolTip(_translate("interface_pattern_menu", "Úhel naklopení vzorku"))
@@ -372,37 +375,37 @@ class Ui_interface_pattern_menu(object):
         self.textedit_h0.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">680</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">680</span></p></body></html>"))
         self.label_beta.setToolTip(_translate("interface_pattern_menu", "Úhel natočení vzorku (rotace)"))
         self.label_beta.setText(_translate("interface_pattern_menu", "Beta"))
         self.textedit_formule_x.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">1</span></p></body></html>"))
         self.label_y_curve.setText(_translate("interface_pattern_menu", "Y curve:"))
         self.label_6.setToolTip(_translate("interface_pattern_menu", "Vzdálenost v mm apertury nelektronového děla od kolmého povrchu vzorku"))
         self.label_6.setText(_translate("interface_pattern_menu", "d0"))
         self.textedit_formule_y.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">x**2+3</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">x**2+3</span></p></body></html>"))
         self.textedit_horizontal.setToolTip(_translate("interface_pattern_menu", "Horizontální rozměr obdélníkového okna v mm"))
         self.textedit_horizontal.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">389</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">389</span></p></body></html>"))
         self.label.setToolTip(_translate("interface_pattern_menu", "Vzdálenost v mm osy otáčení a nosy náklopu od kolmého povrchu vzorku"))
         self.label.setText(_translate("interface_pattern_menu", "d1"))
         self.textedit_vertical.setToolTip(_translate("interface_pattern_menu", "Vertikální rozměr obdélníkového okna v mm"))
         self.textedit_vertical.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">480</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">480</span></p></body></html>"))
         self.button_rotation.setText(_translate("interface_pattern_menu", "Rotation"))
         self.button_approximate.setText(_translate("interface_pattern_menu", "Approximate"))
         self.button_import_pattern.setText(_translate("interface_pattern_menu", "Import pattern"))
@@ -410,14 +413,14 @@ class Ui_interface_pattern_menu(object):
         self.textedit_beta.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">8</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">8</span></p></body></html>"))
         self.textedit_d0.setToolTip(_translate("interface_pattern_menu", "Vzdálenost v mm apertury nelektronového děla od kolmého povrchu vzorku"))
         self.textedit_d0.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1945.61</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">1945.61</span></p></body></html>"))
         self.label_horizontal.setToolTip(_translate("interface_pattern_menu", "Horizontální rozměr obdélníkového okna v mm"))
         self.label_horizontal.setText(_translate("interface_pattern_menu", "Horizontal"))
         self.button_save_pattern.setText(_translate("interface_pattern_menu", "Save pattern"))
@@ -425,8 +428,8 @@ class Ui_interface_pattern_menu(object):
         self.textedit_horizontalshift.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-454.5</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">-454.5</span></p></body></html>"))
         self.label_verticalshift.setToolTip(_translate("interface_pattern_menu", "Vertikální posun středu obdélníkového okna vzhledem k ose elektronového děla v mm"))
         self.label_verticalshift.setText(_translate("interface_pattern_menu", "Verticalshift"))
         self.button_create_pattern.setText(_translate("interface_pattern_menu", "Create patern"))
@@ -434,22 +437,22 @@ class Ui_interface_pattern_menu(object):
         self.textedit_verticalshift.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-209.108</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">-209.108</span></p></body></html>"))
         self.textedit_d1.setToolTip(_translate("interface_pattern_menu", "Vzdálenost v mm osy otáčení a nosy náklopu od kolmého povrchu vzorku"))
         self.textedit_d1.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">302.142</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">302.142</span></p></body></html>"))
         self.label_rozy.setToolTip(_translate("interface_pattern_menu", "Počet bodů od 0 do 1 ve y-ém směru"))
         self.label_rozy.setText(_translate("interface_pattern_menu", "RozY"))
         self.textedit_rozy.setToolTip(_translate("interface_pattern_menu", "Počet bodů od 0 do 1 ve y-ém směru"))
         self.textedit_rozy.setHtml(_translate("interface_pattern_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">8</p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8.25pt;\">8</span></p></body></html>"))
         self.label_horizontalshift.setToolTip(_translate("interface_pattern_menu", "Horizontální posun středu obdélníkového okna vzhledem k ose elektronového děla v mm"))
         self.label_horizontalshift.setText(_translate("interface_pattern_menu", "Horizontalshift"))
         self.label_x_curve.setText(_translate("interface_pattern_menu", "X curve:"))
@@ -458,6 +461,7 @@ class Ui_interface_pattern_menu(object):
         self.label_rozx.setToolTip(_translate("interface_pattern_menu", "Počet bodů od 0 do 1 ve x-ém směru"))
         self.label_rozx.setText(_translate("interface_pattern_menu", "RozX"))
         self.button_input_polynomial.setText(_translate("interface_pattern_menu", "Input polynomial"))
+import icon_resource_rc
 
 
 if __name__ == "__main__":

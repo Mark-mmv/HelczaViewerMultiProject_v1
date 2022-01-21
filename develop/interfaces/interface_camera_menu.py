@@ -15,6 +15,9 @@ class Ui_interface_camera_menu(object):
     def setupUi(self, interface_camera_menu):
         interface_camera_menu.setObjectName("interface_camera_menu")
         interface_camera_menu.resize(998, 715)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/icon/icon2.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        interface_camera_menu.setWindowIcon(icon)
         interface_camera_menu.setStyleSheet("QWidget#centralwidget_camera_menu{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(114, 140, 153, 255), stop:1 rgba(0, 39, 59, 255));}")
         self.centralwidget_camera_menu = QtWidgets.QWidget(interface_camera_menu)
         self.centralwidget_camera_menu.setObjectName("centralwidget_camera_menu")
@@ -296,7 +299,7 @@ class Ui_interface_camera_menu(object):
         self.verticalLayout.addWidget(self.widget_work)
         interface_camera_menu.setCentralWidget(self.centralwidget_camera_menu)
         self.menubar = QtWidgets.QMenuBar(interface_camera_menu)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 998, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 998, 21))
         self.menubar.setObjectName("menubar")
         interface_camera_menu.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(interface_camera_menu)
@@ -304,21 +307,21 @@ class Ui_interface_camera_menu(object):
         interface_camera_menu.setStatusBar(self.statusbar)
 
         self.retranslateUi(interface_camera_menu)
-        self.tabWidget_2.setCurrentIndex(1)
+        self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(interface_camera_menu)
 
     def retranslateUi(self, interface_camera_menu):
         _translate = QtCore.QCoreApplication.translate
-        interface_camera_menu.setWindowTitle(_translate("interface_camera_menu", "MainWindow"))
+        interface_camera_menu.setWindowTitle(_translate("interface_camera_menu", "Camera menu"))
         self.text_edit_name_image.setHtml(_translate("interface_camera_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">_</span></p></body></html>"))
         self.text_edit_exposure_gain.setHtml(_translate("interface_camera_menu", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:9.75pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Exposure&amp;Gain</span></p></body></html>"))
         self.label_image_name.setText(_translate("interface_camera_menu", "Image name:"))
         self.label_cords_2.setText(_translate("interface_camera_menu", "x,y,z"))

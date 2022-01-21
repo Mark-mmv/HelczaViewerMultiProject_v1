@@ -15,6 +15,9 @@ class Ui_interface_image_correction(object):
     def setupUi(self, interface_image_correction):
         interface_image_correction.setObjectName("interface_image_correction")
         interface_image_correction.resize(800, 600)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/icon/icon2.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        interface_image_correction.setWindowIcon(icon)
         interface_image_correction.setStyleSheet("QWidget#centralwidget_interface_image_correction{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:1 rgb(113, 139, 152), stop:0 rgb(40, 75, 92));}\\n\\n")
         self.centralwidget_interface_image_correction = QtWidgets.QWidget(interface_image_correction)
         self.centralwidget_interface_image_correction.setObjectName("centralwidget_interface_image_correction")
@@ -60,7 +63,7 @@ class Ui_interface_image_correction(object):
         self.horizontalLayout.addWidget(self.widget_dialog_controle)
         interface_image_correction.setCentralWidget(self.centralwidget_interface_image_correction)
         self.menubar = QtWidgets.QMenuBar(interface_image_correction)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
         self.menu_file = QtWidgets.QMenu(self.menubar)
         self.menu_file.setObjectName("menu_file")
@@ -81,7 +84,7 @@ class Ui_interface_image_correction(object):
 
     def retranslateUi(self, interface_image_correction):
         _translate = QtCore.QCoreApplication.translate
-        interface_image_correction.setWindowTitle(_translate("interface_image_correction", "MainWindow"))
+        interface_image_correction.setWindowTitle(_translate("interface_image_correction", "Image correction"))
         self.checkbox_submit_area.setText(_translate("interface_image_correction", "sub area"))
         self.button_back_submit.setText(_translate("interface_image_correction", "Back"))
         self.button_submit_area.setText(_translate("interface_image_correction", "Submit"))
@@ -90,6 +93,7 @@ class Ui_interface_image_correction(object):
         self.menu_file.setTitle(_translate("interface_image_correction", "File"))
         self.action_open_image.setText(_translate("interface_image_correction", "Open image"))
         self.action_save_image.setText(_translate("interface_image_correction", "Save image"))
+import icon_resource_rc
 
 
 if __name__ == "__main__":

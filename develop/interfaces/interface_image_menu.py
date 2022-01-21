@@ -15,6 +15,9 @@ class Ui_interface_image_menu(object):
     def setupUi(self, interface_image_menu):
         interface_image_menu.setObjectName("interface_image_menu")
         interface_image_menu.resize(822, 639)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/icon/icon2.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        interface_image_menu.setWindowIcon(icon)
         interface_image_menu.setStyleSheet("QWidget#centralwidget_image_menu{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:1 rgb(113, 139, 152), stop:0 rgb(40, 75, 92));}\n"
 "\n"
 "")
@@ -55,7 +58,7 @@ class Ui_interface_image_menu(object):
         self.verticalLayout.addWidget(self.widget_work)
         interface_image_menu.setCentralWidget(self.centralwidget_image_menu)
         self.menubar = QtWidgets.QMenuBar(interface_image_menu)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 822, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 822, 21))
         self.menubar.setObjectName("menubar")
         self.menu_file = QtWidgets.QMenu(self.menubar)
         self.menu_file.setObjectName("menu_file")
@@ -76,7 +79,7 @@ class Ui_interface_image_menu(object):
 
     def retranslateUi(self, interface_image_menu):
         _translate = QtCore.QCoreApplication.translate
-        interface_image_menu.setWindowTitle(_translate("interface_image_menu", "MainWindow"))
+        interface_image_menu.setWindowTitle(_translate("interface_image_menu", "Image menu"))
         self.button_open_analysis_window.setText(_translate("interface_image_menu", "Open Analysis window"))
         self.checkbox_line_profile.setText(_translate("interface_image_menu", "Line profile"))
         self.checkbox_select_area.setText(_translate("interface_image_menu", "Select area"))
@@ -84,6 +87,7 @@ class Ui_interface_image_menu(object):
         self.menu_file.setTitle(_translate("interface_image_menu", "File"))
         self.action_open_image.setText(_translate("interface_image_menu", "Open image"))
         self.action_save_image.setText(_translate("interface_image_menu", "Save image"))
+import icon_resource_rc
 
 
 if __name__ == "__main__":

@@ -15,6 +15,9 @@ class Ui_interface_analysis_menu(object):
     def setupUi(self, interface_analysis_menu):
         interface_analysis_menu.setObjectName("interface_analysis_menu")
         interface_analysis_menu.resize(590, 439)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/icon/icon2.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        interface_analysis_menu.setWindowIcon(icon)
         self.verticalLayout = QtWidgets.QVBoxLayout(interface_analysis_menu)
         self.verticalLayout.setObjectName("verticalLayout")
         self.companovka = QtWidgets.QGridLayout()
@@ -26,7 +29,8 @@ class Ui_interface_analysis_menu(object):
 
     def retranslateUi(self, interface_analysis_menu):
         _translate = QtCore.QCoreApplication.translate
-        interface_analysis_menu.setWindowTitle(_translate("interface_analysis_menu", "Dialog"))
+        interface_analysis_menu.setWindowTitle(_translate("interface_analysis_menu", "Analysis menu"))
+import icon_resource_rc
 
 
 if __name__ == "__main__":

@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Image correction</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource/icon_resource.qrc">
+    <normaloff>:/icon/icon/icon2.bmp</normaloff>:/icon/icon/icon2.bmp</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#centralwidget_interface_image_correction{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:1 rgb(113, 139, 152), stop:0 rgb(40, 75, 92));}\n\n</string>
@@ -104,7 +108,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_file">
@@ -128,6 +132,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource/icon_resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
