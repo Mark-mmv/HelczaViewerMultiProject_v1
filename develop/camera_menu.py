@@ -59,7 +59,7 @@ class InterfaceCameraMenu(StandardInstruments, QMainWindow, Ui_interface_camera_
         self.image_reference = np.array(self.image)
         self.stream_start_stop = False
         self.stream_process = camera
-        self.one_frame = self.axes_stream.imshow([[0]])
+        self.one_frame = self.axes.imshow([[0]])
         self.interface_image_correction = InterfaceImageCorrection(self.main)
 
     def start_stream(self):
