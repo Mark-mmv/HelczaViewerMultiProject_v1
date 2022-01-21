@@ -41,10 +41,15 @@ class InterfaceMain(QMainWindow, QDialog, QApplication, Ui_interface_main):
         self.interface_camera_menu_andor.show() if camera == "andor" else self.interface_camera_menu_vimba.show()
         self.dialog_select_camera.close()
 
+    def closeEvent(self, event):
+        for widget in QApplication.topLevelWidgets():
+            widget.close()
+
 
 def main():
     app = QApplication(sys.argv)
     interface_main = InterfaceMain()
+    app.aboutToQuit.connect(interface_main.closeEvent)
     interface_main.show()
     sys.exit(app.exec_())
 
